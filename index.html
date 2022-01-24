@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+  
+<title>Day Number Motivation | Do Something Daily! </title>
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+</head>
+
+
+<style>
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 5000% 5000%;
+	animation: gradient 65s ease infinite;
+	font-family: "Quicksand", sans-serif;
+  color: white;
+}
+
+h1 {
+	font-weight:600;
+	font-size: 160px;
+	text-align: center;
+
+}
+  
+#left{
+  text-align: left;    
+}
+  
+#dosomething{
+  text-align: right;
+  }
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.container { 
+  position: relative;
+  height: 1000px;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+</style>
+  
+<body>
+
+<div class="container">
+  <div class="center">
+
+<h2 id="left">Today there are...</h2>
+
+<h1 id="dayth"></h1>
+
+<h2 id="dosomething"></h2>
+
+
+  </div>
+</div>
+
+<script>
+var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var diff = now - start;
+var oneDay = 1000 * 60 * 60 * 24;
+var day = Math.floor(diff / oneDay);
+var day_left = 366 - day;
+
+function ordinal_suffix_of(i) {
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "st";
+    }
+    if (j == 2 && k != 12) {
+        return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return i + "rd";
+    }
+    return i + "th";
+}
+
+var dosomething = "days left in the year, go do " + day_left + " of something!";
+
+document.getElementById("dayth").innerHTML = day_left;
+
+document.getElementById("dosomething").innerHTML = dosomething; 
+
+console.log('Days of Year Left: ' + day_left);
+
+
+</script>
+
+
+</body>
+</html>
