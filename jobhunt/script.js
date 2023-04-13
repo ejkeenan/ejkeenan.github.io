@@ -9,6 +9,7 @@ FusionCharts.ready(function() {
     dataSource: {
       chart: {
         caption: "Job Hunt - 2023",
+		subCaption: "Flow of job hunt as a project manager with 10+ years experience for roughly 2 months in 2023",
         showLegend: 0,
         linkcolor: 'blend',
         theme: "fusion",
